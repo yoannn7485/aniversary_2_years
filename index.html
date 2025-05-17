@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ANIVERSARY 2 YEARS - BAPER MODE ON!</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffcccb, #ffe4e1);
+    color: #660000;
+    margin: 0; padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+  }
+  .slide {
+    display: none;
+    max-width: 600px;
+    background: #fff8f8;
+    border: 3px dotted #ff69b4;
+    padding: 40px 35px;
+    border-radius: 25px;
+    box-shadow: 6px 6px 18px #ff69b455;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    transition: all 0.4s ease;
+  }
+  .slide.active {
+    display: block;
+    animation: slideIn 0.5s ease forwards;
+  }
+  @keyframes slideIn {
+    from {opacity: 0; transform: translateY(25px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  h2 {
+    margin-bottom: 25px;
+    font-size: 3rem;
+    color: #ff1493;
+    text-shadow: 2px 2px 3px #aa007a;
+    letter-spacing: 2px;
+  }
+  p {
+    white-space: pre-line;
+    font-weight: 700;
+  }
+  .nav-buttons {
+    margin-top: 30px;
+  }
+  button {
+    cursor: pointer;
+    background-color: #ff1493;
+    border: none;
+    color: white;
+    font-weight: 900;
+    padding: 14px 28px;
+    margin: 0 12px;
+    border-radius: 16px;
+    font-size: 1.15rem;
+    box-shadow: 0 8px 16px #aa007a99;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #aa007a;
+  }
+  iframe {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(255, 20, 147, 0.4);
+  }
+</style>
+</head>
+<body>
+
+  <div class="slide active" id="slide1">
+    <h2>ANIVERSARY 2 YEARS</h2>
+    <p>
+      Dua tahun bareng kamu tuh kayak  
+      WiFi gratis di kafe favorit:  
+      kenceng sinyalnya, bikin betah,  
+      dan kalau hilang, langsung baper gak karuan!  
+      
+      Thanks ya udah jadi hotspot paling nyaman di hati aku. ❤️
+    </p>
+  </div>
+
+  <div class="slide" id="slide2">
+    <h2>ANIVERSARY 2 YEARS</h2>
+    <p>
+      Kalau cinta kita diibaratkan makanan,  
+      kamu itu pizza deluxe:  
+      penuh topping lucu, manis, dan selalu bikin nagih!  
+      
+      Aku? Ya kayak saus pedesnya,  
+      kadang bikin meledak, tapi selalu bikin hidup tambah seru! 🌶️🍕
+    </p>
+  </div>
+
+  <div class="slide" id="slide3">
+    <h2>ANIVERSARY 2 YEARS</h2>
+    <p>
+      Dua tahun pacaran sama kamu itu kayak  
+      marathon drama romantis yang gak pernah tamat,  
+      walau ada adegan lucu yang bikin ngakak sampe perut kram.  
+      
+      Pokoknya, kamu itu sequel terbaik dalam hidup aku! 🎬💖
+    </p>
+  </div>
+
+  <div class="slide" id="slide4">
+    <h2>Kenangan Kita</h2>
+    <iframe 
+      src="https://www.youtube.com/embed/uIoKBRTO40g" 
+      title="Video Kenangan" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">Sebelumnya</button>
+    <button onclick="nextSlide()">Selanjutnya</button>
+  </div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 4;
+
+  function showSlide(n) {
+    for(let i=1; i<=totalSlides; i++) {
+      document.getElementById('slide'+i).classList.remove('active');
+    }
+    document.getElementById('slide'+n).classList.add('active');
+  }
+
+  function nextSlide() {
+    if(currentSlide < totalSlides) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+  }
+
+  function prevSlide() {
+    if(currentSlide > 1) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  }
+</script>
+
+</body>
+</html>
